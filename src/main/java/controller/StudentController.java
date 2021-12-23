@@ -30,7 +30,7 @@ public class StudentController {
         if (search == null) {
             students = studentService.findAll();
         } else {
-            students = studentService.findByName(search);
+            students = studentService.findByNameContaining(search);
         }
         model.addAttribute("list", students);
         return "/list";
@@ -43,7 +43,7 @@ public class StudentController {
             students = studentService.findAllByOrderByScoreDesc();
 
         } else {
-            students = studentService.findByName(search);
+            students = studentService.findByNameContaining(search);
         }
         model.addAttribute("list", students);
         return "/list";
@@ -55,7 +55,7 @@ public class StudentController {
         if (search == null) {
             students = studentService.findAllByOrderByScoreAsc();
         } else {
-            students = studentService.findByName(search);
+            students = studentService.findByNameContaining(search);
         }
         model.addAttribute("list", students);
         return "/list";
