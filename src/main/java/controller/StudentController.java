@@ -20,7 +20,7 @@ public class StudentController {
     private ClassesServiceImpl classesService;
 
     @ModelAttribute("classes")
-    public Iterable<Classes> categories() {
+    public Iterable<Classes> classes() {
         return classesService.findAll();
     }
 
